@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="recyclerview_swipemenulayout">
+        <attr name="recyclerview_leftviewid" format="reference" />
+        <attr name="recyclerview_rightviewid" format="reference" />
+        <attr name="recyclerview_contentviewid" format="reference" />
+    </declare-styleable>
+
+</resources>
