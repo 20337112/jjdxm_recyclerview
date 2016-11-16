@@ -1,0 +1,2 @@
+# jjdxm_recyclerview
+recyclerview 封装基类适配器和基类holder 以及分割线使用
