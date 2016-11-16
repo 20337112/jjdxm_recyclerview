@@ -6,7 +6,7 @@ ext {
     jjdxm_bintrayName = 'jjdxm-recyclerview'
 
     jjdxm_packaging = 'aar'
-    jjdxm_groupId = 'com.yanzhenjie.recyclerview.swipe'
+    jjdxm_groupId = 'com.dou361.recyclerview'
     jjdxm_artifactId = 'jjdxm-recyclerview'
 
     jjdxm_libraryVersion = '1.0.0'
