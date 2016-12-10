@@ -21,10 +21,10 @@
 
 ## Screenshots ##
 
-<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_pay/master/screenshots/icon01.png" width="300"> 
-<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_pay/master/screenshots/icon02.png" width="300">
-<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_pay/master/screenshots/icon03.png" width="300"> 
-<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_pay/master/screenshots/icon04.png" width="300">
+<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_recyclerview/master/screenshots/icon01.png" width="300">
+<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_recyclerview/master/screenshots/icon02.png" width="300">
+<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_recyclerview/master/screenshots/icon03.png" width="300">
+<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_recyclerview/master/screenshots/icon04.png" width="300">
 
 ## Download ##
 
