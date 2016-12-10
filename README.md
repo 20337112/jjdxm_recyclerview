@@ -44,6 +44,7 @@ or Gradle:
 
 历史版本：
 
+    compile 'com.dou361.recyclerview:jjdxm-recyclerview:1.0.2'
     compile 'com.dou361.recyclerview:jjdxm-recyclerview:1.0.1'
 	compile 'com.dou361.recyclerview:jjdxm-recyclerview:1.0.0'
 
@@ -61,7 +62,7 @@ jjdxm-recyclerview requires at minimum Java 9 or Android 2.3.
 ### step1 ###
 引入依赖，如果主程序项目中有重复的类库，可以用打开注释来移除重复依赖。
 
-	    compile ('com.dou361.recyclerview:jjdxm-recyclerview:1.0.1'){
+	    compile ('com.dou361.recyclerview:jjdxm-recyclerview:1.0.2'){
 	//        exclude group: 'com.android.support', module: 'design'
 	    }
 
@@ -70,7 +71,7 @@ jjdxm-recyclerview requires at minimum Java 9 or Android 2.3.
 
 ## ChangeLog ##
 
-2016.12.10 1.0.1版本发布，修复分割线底部一直出来，添加holder状态回收防止错乱问题
+2016.12.10 1.0.2版本发布，修复分割线底部一直出来，添加holder状态回收防止错乱问题
 
 2016.11.16 1.0.0版本发布
 
