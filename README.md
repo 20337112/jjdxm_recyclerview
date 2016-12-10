@@ -14,12 +14,17 @@
 
 ## Introduction ##
 
-### 这是一个自定义 ###
+这是一个自定义recyclerview简单实用类库，封装了基类adapter和基类holder，可以快速完成列表的代码实现，其中包括带菜单选项的列表和不带菜单选项的列表，下拉刷新和上拉加载更多，横向列表、竖向列表和流式列表等实现，分割线显示分顶部、中间和底部等。
 
 ## Features ##
 
 
 ## Screenshots ##
+
+<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_pay/master/screenshots/icon01.png" width="300"> 
+<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_pay/master/screenshots/icon02.png" width="300">
+<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_pay/master/screenshots/icon03.png" width="300"> 
+<img src="https://raw.githubusercontent.com/jjdxmashl/jjdxm_pay/master/screenshots/icon04.png" width="300">
 
 ## Download ##
 
@@ -39,6 +44,7 @@ or Gradle:
 
 历史版本：
 
+    compile 'com.dou361.recyclerview:jjdxm-recyclerview:1.0.1'
 	compile 'com.dou361.recyclerview:jjdxm-recyclerview:1.0.0'
 
 jjdxm-recyclerview requires at minimum Java 9 or Android 2.3.
@@ -48,21 +54,23 @@ jjdxm-recyclerview requires at minimum Java 9 or Android 2.3.
 
 ## Proguard ##
 
-根据你的混淆器配置和使用，您可能需要在你的proguard文件内配置以下内容：
-
-	-keep com.dou361.recyclerview.** {
-   		*;
-	}
-
-
 [AndroidStudio代码混淆注意的问题][minify]
 
 ## Get Started ##
+
+### step1 ###
+引入依赖，如果主程序项目中有重复的类库，可以用打开注释来移除重复依赖。
+
+	    compile ('com.dou361.recyclerview:jjdxm-recyclerview:1.0.1'){
+	//        exclude group: 'com.android.support', module: 'design'
+	    }
 
 
 ## More Actions ##
 
 ## ChangeLog ##
+
+2016.12.10 1.0.1版本发布，修复分割线底部一直出来，添加holder状态回收防止错乱问题
 
 2016.11.16 1.0.0版本发布
 

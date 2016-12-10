@@ -25,7 +25,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.dou361.jjdxm_baseutils"
+        applicationId "com.dou361.jjdxm_recyclerview"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
@@ -50,6 +50,14 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile project(':jjdxm-recyclerview')
     compile rootProject.ext.jjdxm_v7
+    compile project(':jjdxm-recyclerview')
+    //注解
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //工具类
+    compile 'com.dou361.baseutils:jjdxm-baseutils:1.0.5'
+    //自定义view
+    compile 'com.dou361.customui:jjdxm-customui:1.0.6'
+    //图片加载类库
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }

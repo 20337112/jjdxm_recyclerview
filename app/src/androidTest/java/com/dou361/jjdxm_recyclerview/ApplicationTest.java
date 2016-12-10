@@ -1,4 +1,4 @@
-package com.dou361.jjdxm_baseutils;
+package com.dou361.jjdxm_recyclerview;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

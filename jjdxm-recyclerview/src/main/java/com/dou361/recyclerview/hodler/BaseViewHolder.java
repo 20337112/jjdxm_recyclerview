@@ -83,4 +83,12 @@ public abstract class BaseViewHolder<T> extends ViewHolder implements View.OnCli
             mlistener.onItemClick(position);
         }
     }
+
+
+    /**
+     * item回收时重置数据，防止数据错乱，
+     * 这里主要注意的内容是执行异步处理的操作，回收时一定要取消异步处理
+     * 像handler，计时器，加载网络等
+     */
+    public void onViewRecycled(){}
 }

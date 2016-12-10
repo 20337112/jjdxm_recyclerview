@@ -2,7 +2,7 @@ package com.dou361.recyclerview.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView.Adapter;
-import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.dou361.recyclerview.hodler.BaseViewHolder;
@@ -23,30 +23,14 @@ import java.util.List;
  * <p>
  * 创建日期：2016/10/5 17:54
  * <p>
- * 描 述：RecyclerView的Adapter的基类
+ * 描 述：普通RecyclerView的Adapter的基类
  * <p>
  * <p>
  * 修订历史：
  * <p>
  * ========================================
  */
-public abstract class BaseRecyclerViewAdapter<T> extends Adapter<ViewHolder> {
-
-
-    /**
-     *用来确定每一个item如何进行排列摆放
-     * LinearLayoutManager 相当于ListView的效果
-     GridLayoutManager相当于GridView的效果
-     StaggeredGridLayoutManager 瀑布流
-     */
-    /**第一步：设置布局管理器**/
-//    rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-    /**第二步：添加分割线**/
-//    itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
-//    rv.addItemDecoration(itemDecoration);
-    /**第三步：设置适配器**/
-//    rvAdapter = new RvAdapter(this, datas);
-//    rv.setAdapter(rvAdapter);
+public abstract class BaseRecyclerViewAdapter<T> extends Adapter<BaseViewHolder> {
 
     /**
      * 上下文
@@ -68,17 +52,24 @@ public abstract class BaseRecyclerViewAdapter<T> extends Adapter<ViewHolder> {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return getItemHolder(parent, viewType);
+    public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View contentView = onCreateContentView(parent, viewType);
+        return getItemHolder(contentView, viewType);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(BaseViewHolder holder, int position) {
         if (holder != null) {
             baseHolder = (BaseViewHolder) holder;
             baseHolder.setPosition(position);
             baseHolder.setData(mDatas.get(position));
         }
+    }
+
+    @Override
+    public void onViewRecycled(BaseViewHolder holder) {
+        super.onViewRecycled(holder);
+        holder.onViewRecycled();
     }
 
     @Override
@@ -97,7 +88,16 @@ public abstract class BaseRecyclerViewAdapter<T> extends Adapter<ViewHolder> {
     /**
      * 获得Holder
      */
-    public abstract BaseViewHolder getItemHolder(ViewGroup parent, int viewType);
+    public abstract BaseViewHolder getItemHolder(View contentView, int viewType);
+
+    /**
+     * Create view for item.
+     *
+     * @param parent   The ViewGroup into which the new View will be added after it is bound to an adapter position.
+     * @param viewType The view type of the new view.
+     * @return A new ViewHolder that holds a View of the given view type.
+     */
+    public abstract View onCreateContentView(ViewGroup parent, int viewType);
 
     /**
      * 设置Item点击监听

@@ -34,7 +34,24 @@ import com.dou361.recyclerview.swipe.SwipeMenuView;
 import java.util.List;
 
 /**
- * Created by Yan Zhenjie on 2016/7/27.
+ * ========================================
+ * <p/>
+ * 版 权：dou361.com 版权所有 （C） 2015
+ * <p/>
+ * 作 者：陈冠明
+ * <p/>
+ * 个人网站：http://www.dou361.com
+ * <p/>
+ * 版 本：1.0
+ * <p/>
+ * 创建日期：2016/12/10 11:06
+ * <p/>
+ * 描 述：recyclerview的适配器并且带有滑动菜单
+ * <p/>
+ * <p/>
+ * 修订历史：
+ * <p/>
+ * ========================================
  */
 public abstract class BaseSwipeMenuAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
 
@@ -135,12 +152,12 @@ public abstract class BaseSwipeMenuAdapter<T> extends RecyclerView.Adapter<BaseV
     /**
      * Instead {@link #onCreateViewHolder(ViewGroup, int)}.
      *
-     * @param realContentView Is this Item real view, {@link SwipeMenuLayout} or {@link #onCreateContentView(ViewGroup, int)}.
+     * @param contentView Is this Item real view, {@link SwipeMenuLayout} or {@link #onCreateContentView(ViewGroup, int)}.
      * @param viewType        The view type of the new View.
      * @return A new ViewHolder that holds a View of the given view type.
      * @see #getItemHolder(RecyclerView.ViewHolder, int, List)
      */
-    public abstract BaseViewHolder getItemHolder(View realContentView, int viewType);
+    public abstract BaseViewHolder getItemHolder(View contentView, int viewType);
 
     @Override
     public final void onBindViewHolder(BaseViewHolder holder, int position, List<Object> payloads) {
@@ -174,6 +191,12 @@ public abstract class BaseSwipeMenuAdapter<T> extends RecyclerView.Adapter<BaseV
     public void onBindViewHolder(BaseViewHolder holder, int position) {
         holder.setPosition(position);
         holder.setData(mDatas.get(position));
+    }
+
+    @Override
+    public void onViewRecycled(BaseViewHolder holder) {
+        super.onViewRecycled(holder);
+        holder.onViewRecycled();
     }
 
     @Override

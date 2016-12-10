@@ -223,12 +223,19 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         if (isVertical) {
             /**竖向列表*/
             if (position == 0) {
-                if (isMarginTopShow) {
-                    /**第一个view，可以在顶部加一个margin值*/
-                    outRect.set(0, mDividerHeight, 0, mDividerHeight);
+                if (position >= count - 1) {
+                    if (isMarginTopShow) {
+                        /**第一个view，可以在顶部加一个margin值*/
+                        outRect.set(0, mDividerHeight, 0, 0);
+                    }
                 } else {
-                    if (isMiddleShow) {
-                        outRect.set(0, 0, 0, mDividerHeight);
+                    if (isMarginTopShow) {
+                        /**第一个view，可以在顶部加一个margin值*/
+                        outRect.set(0, mDividerHeight, 0, mDividerHeight);
+                    } else {
+                        if (isMiddleShow) {
+                            outRect.set(0, 0, 0, mDividerHeight);
+                        }
                     }
                 }
             } else if (position >= count - 1) {
@@ -245,12 +252,19 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         } else {
             /**横向列表*/
             if (position == 0) {
-                if (isMarginTopShow) {
-                    /**第一个view，可以在顶部加一个margin值*/
-                    outRect.set(mDividerHeight, 0, mDividerHeight, 0);
+                if (position >= count - 1) {
+                    if (isMarginTopShow) {
+                        /**第一个view，可以在顶部加一个margin值*/
+                        outRect.set(mDividerHeight, 0, 0, 0);
+                    }
                 } else {
-                    if (isMiddleShow) {
-                        outRect.set(0, 0, mDividerHeight, 0);
+                    if (isMarginTopShow) {
+                        /**第一个view，可以在顶部加一个margin值*/
+                        outRect.set(mDividerHeight, 0, mDividerHeight, 0);
+                    } else {
+                        if (isMiddleShow) {
+                            outRect.set(0, 0, mDividerHeight, 0);
+                        }
                     }
                 }
             } else if (position >= count - 1) {
@@ -324,8 +338,19 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
                         }
                     }
                 }
+            } else if (i >= childSize - 1) {
+                if (isMarginBottomshow) {
+                    /**画竖线，就是往右偏移一个分割线的宽度*/
+                    if (mDivider != null) {
+                        mDivider.setBounds(left, top, right, bottom);
+                        mDivider.draw(canvas);
+                    }
+                    if (mPaint != null) {
+                        canvas.drawRect(left, top, right, bottom, mPaint);
+                    }
+                }
             } else {
-                if (isMiddleShow || i >= childSize - 1) {
+                if (isMiddleShow) {
                     /**画竖线，就是往右偏移一个分割线的宽度*/
                     if (mDivider != null) {
                         mDivider.setBounds(left, top, right, bottom);
@@ -397,8 +422,18 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
                         }
                     }
                 }
+            } else if (i >= childSize - 1) {
+                if (isMarginBottomshow) {
+                    if (mDivider != null) {
+                        mDivider.setBounds(left, top, right, bottom);
+                        mDivider.draw(canvas);
+                    }
+                    if (mPaint != null) {
+                        canvas.drawRect(left, top, right, bottom, mPaint);
+                    }
+                }
             } else {
-                if (isMiddleShow || i >= childSize - 1) {
+                if (isMiddleShow) {
                     if (mDivider != null) {
                         mDivider.setBounds(left, top, right, bottom);
                         mDivider.draw(canvas);
